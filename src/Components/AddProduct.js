@@ -5,7 +5,7 @@ function AddProduct(props) {
 
 
   const[product,setproduct] = useState({title:"",description:"",price:"",thumbnail:""});
-  // const [products,setproducts] = useState([{item}])
+  
   
   const changeProduct=(e)=>{
   setproduct({...product,[e.target.name]:e.target.value})
@@ -28,16 +28,10 @@ function AddProduct(props) {
        <input type="text" value={product.description} onChange={changeProduct} placeholder=' Add description' name='description' />
        <input type="text" value={product.price} onChange={changeProduct}placeholder=' Add price' name='price' />
        <input type="text" value={product.thumbnail} onChange={changeProduct}placeholder=' url' name='thumbnail' />
-
-       {/* <input value={product.thumbnail} onChange={changeProduct}type="file" /> */}
        <button onClick={ addProduct} >Add </button>
 
        {/* product to be added {JSON.stringify(product)} */}
 
-   
-
-
-    
 
      </div>
      

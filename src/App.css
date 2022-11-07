@@ -45,6 +45,7 @@ button{
   color: aliceblue;
   background-color: rgba(0, 128, 0, 0.769);
   border: none;
+  margin-left: 40px;
 
 }
 .title{
@@ -52,7 +53,6 @@ button{
   font-weight: bold;
 }
 form{
-  /* display: grid; */
   align-items: center;
   width: 270px;
   height: 50vh;
