@@ -1,29 +1,49 @@
-import image1 from '../src/component/images/f5.jpeg'
-import image2 from '../src/component/images/f2.jpeg'
-import image3 from '../src/component/images/f3.jpeg'
 
 
-const data = {
-  products: [
-    {
-      id: '1',
-      name: 'Bananas',
-      price: 1400,
-      image: image1,
-    },
-    {
-      id: '2',
-      name: 'Lemons',
-      price: 2400,
-      image: image2,
-    },
-    {
-      id: '3',
-      name: 'Berrys',
-      price: 1000,
-      image: image3,
-    },
-    
-  ],
-};
-export default data;
+// const list=[
+  
+//     // {
+//     //     img:"./images/pic1.jpeg",
+//     //     title:"chichen and rice",
+//     //     description:"Chicken thigh fillets",
+//     //     price:"25k",
+//     //   },
+      
+//     //   {
+//     //     img:"./images/pic1.jpeg",
+//     //     title:"pizza",
+//     //     description:"dish of Italian origin",
+//     //     price:"12k"
+//     //   },
+      
+//     //   {
+//     //     img:"./images/pic1.jpeg",
+//     //     title:"burger",
+//     //     description:" delicious hamburger recipe",
+//     //     price:"10k"
+//     //   },
+      
+//     //   {
+//     //     img:"./images/pic1.jpeg",
+//     //     title:"chips",
+//     //     description:" To make cheeseburgers.",
+//     //     price:"5k"
+//     //   },
+       
+//     //   {
+//     //     img:"./images/pic1.jpeg",
+//     //     title:"chips",
+//     //     description:" To make cheeseburgers.",
+//     //     price:"5k"
+//     //   },
+
+//     //   {
+//     //     img:"./images/pic1.jpeg",
+//     //     title:"chips",
+//     //     description:" To make cheeseburgers.",
+//     //     price:"5k"
+//     //   },
+      
+//     ];
+     
+//     export default list;

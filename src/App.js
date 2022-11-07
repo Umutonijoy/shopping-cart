@@ -1,58 +1,38 @@
-import Header from './component/Header';
-import Main from './component/Main';
-import Basket from './component/Basket';
-import data from './data';
+
+import './App.css';
+
+import {Routes, Route} from 'react-router-dom'
+import AddProduct from './Components/AddProduct';
+import Home from './Components/Home';
 import { useState } from 'react';
+import Cart from './Components/Cart'
+import axios from 'axios';
 
 function App() {
+  const [show, setShow] = useState(true)
+  const [carts, setCarts] = useState([])
+
+  const [data, setData] = useState([]);
 
 
-  const { products } = data;
-  const [cartItems, setCartItems] = useState([]);
-  const onAdd = (product) => {
-  const exist = cartItems.find((x) => x.id === product.id);
-
-
-    if (exist) {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
-        )
-      );
-    } else {
-      setCartItems([...cartItems, { ...product, qty: 1 }]);
-    }
-  };
-
-
-  const onRemove = (product) => {
-    const exist = cartItems.find((x) => x.id === product.id);
-
-
-
-    if (exist.qty === 1) {
-      setCartItems(cartItems.filter((x) => x.id !== product.id));
-    } else {
-      setCartItems(
-        cartItems.map((x) =>
-          x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-        )
-      );
-    }
-  };
+  const getproducts = async ()=>{
+  const response= await axios.get("https://dummyjson.com/products?limit=3");
+  setData(response.data.products);
+  }
+  if(data.length<1){
+  getproducts()};
 
   return (
-    <div className="App">
-      <Header countCartItems={cartItems.length}></Header>
-      <div className="flexrow">
-        <Main products={products} onAdd={onAdd}></Main>
-        <Basket
-          cartItems={cartItems}
-          onAdd={onAdd}
-          onRemove={onRemove}
-        ></Basket>
-      </div>
-    </div>
+    <>
+  
+  <Cart/>
+    
+  
+    <Routes>
+    <Route path='/' element={<Home data={data}/>}/>
+    <Route path='/addnewproduct' element={<AddProduct setData={setData} data={data}/>}/>
+    </Routes>
+  </>
   );
 }
 
